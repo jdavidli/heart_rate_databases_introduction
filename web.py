@@ -3,13 +3,14 @@ from pymodm import connect
 import requests
 import models
 import datetime
-from datetime import datetime
+from flask_cors import CORS
+#from datetime import datetime
 
 
 # open up connection to db
 connect("mongodb://localhost:27017/heart_rate_app")
 app = Flask(__name__)
-
+CORS(app)
 
 @app.route("/api/heart_rate/<user_email>", methods=["GET"])
 def get_heart_rate(user_email):
