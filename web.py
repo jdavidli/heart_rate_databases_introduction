@@ -23,7 +23,10 @@ def get_heart_rate(user_email):
     try:
         # Get the first user where _id=email
         user = models.User.objects.raw({"_id": user_email}).first()
-        return jsonify(user.heart_rate)
+        hr = user.heart_rate
+        times = user.heart_rate_times
+        stuffed = [{'time': time, 'heartrate': heartrate} for time, heartrate in zip(times, hr)]
+        return jsonify(stuffed)
     except:
         raise requests.HTTPError('404: User not found')
 
