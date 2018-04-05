@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 
 # open up connection to db
-connect("mongodb://localhost:27017/heart_rate_app")
+connect("mongodb://vcm-3476.vm.duke.edu:27017/heart_rate_app")
 app = Flask(__name__)
 CORS(app)
 
