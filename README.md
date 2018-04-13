@@ -1,21 +1,11 @@
 # heart_rate_databases_starter
-Starter codebase for BME590 Databases Assignment (which can be found [here](https://github.com/mlp6/Medical-Software-Design/blob/master/Lectures/databases/main.md#mini-projectassignment)). 
+Backend built on MongoDB and Flask. Flask handles web requests and connects to the database. The backend allows patients and their heart rates to be stored in a database and can serve various measurements to the user (e.g. average heart rate).
 
-To get started with this sample code, you first need to get the mongodb program running. To do this, simply run 
+To get started, first start MongoDB by running:
 ```
 docker run -v $PWD/db:/data/db -p 27017:27017 mongo
 ```
-
-either on your local machine (if you have docker installed there) or on a virtual machine you have access to where you can first install docker.
-
-:eyes: if you are running your mongodb database on a virtual machine, you need to replace the `connect` URI string in `main.py`. Replace `localhost` with a VM address, like so:
-
-```py
-connect("mongodb://vcm-0000.vm.duke.edu:27017/heart_rate_app") # open up connection to db
-```
-
-once your database is running and your connection string is set, you can run the starter program by running `main.py` after activating your `virtualenv` and installing all the dependencies listed in `requirements.txt`.
-
+on the virtual machine with Docker. Once the database is running, activate the `virtualenv` and install all the necessary dependencies using `pip install -r requirements.txt` Then run the web service by running:
 ```
 python main.py
 ```
