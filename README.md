@@ -7,5 +7,5 @@ docker run -v $PWD/db:/data/db -p 27017:27017 mongo
 ```
 on the virtual machine with Docker. Once the database is running, activate the `virtualenv` and install all the necessary dependencies using `pip install -r requirements.txt` Then run the web service by running:
 ```
-python main.py
+python web.py
 ```
